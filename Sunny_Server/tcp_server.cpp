@@ -7,12 +7,12 @@ void ErrorHandling(char* message);
 int main()
 {
 	char* input_port = "7711";
-	char* input_ip   = "127.0.0.1";
+	char* input_ip = "127.0.0.1";
 
 	WSADATA wsaData;
 
 	SOCKET server_socket, client_socket;
-	
+
 	SOCKADDR_IN server_addr, client_addr;
 
 	int client_addr_size;
@@ -30,9 +30,7 @@ int main()
 	// 1단계. 소켓 생성
 	// 성공 시 소켓 핸들, 실패 시 INVALID_SOCKET 반환
 	// int af, int type, int protocol
-	server_socket = socket(PF_INET, SOCK_STREAM, 0);  // PF_INET: IPv4 인터넷 프로토콜 체계, SOCK_STREAM: 연결지향형 소켓의 데이터 송수신 방식
-	// int tcp_socket = socket(PF_INET, SOCK_STREAM, IPPROTO_TCP);
-	// int udp_socket = socket(PF_INET, SOCK_DGRAM,  IPPROTO_UDP);
+	server_socket = socket(PF_INET, SOCK_STREAM, IPPROTO_TCP);  // PF_INET: IPv4 인터넷 프로토콜 체계, SOCK_STREAM: 연결지향형 소켓의 데이터 송수신 방식
 	if (server_socket == INVALID_SOCKET)
 		ErrorHandling("socket() error");
 
@@ -62,7 +60,7 @@ int main()
 	if (client_socket == INVALID_SOCKET)
 		ErrorHandling("accept() error");
 
-	
+
 	// Write
 	// 성공 시 전송된 바이트 수, 실패 시 SOCKET_ERROR 반환
 	// SOCKET s        : 데이터 전송 대상과의 연결을 의미하는 소켓의 핸들 값

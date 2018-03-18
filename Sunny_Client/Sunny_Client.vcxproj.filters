@@ -18,5 +18,8 @@
     <ClCompile Include="hello_client.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="tcp_client.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
