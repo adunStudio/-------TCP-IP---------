@@ -45,6 +45,9 @@ int main()
 	server_addr.sin_addr.s_addr = inet_addr(input_ip);
 	server_addr.sin_port = htons(atoi(input_port));
 
+	// inet_addr : 문자열 정보를 네트워크 바이트 순서의 정수로 변환
+	// 성공 시 빅 에디안으로 변환된 32비트 정수 값, 실패 시 INADDR_NONE 반환
+
 	// 클라이언트 프로그앰에서 소켓을 기반으로 연결요청
 	// 성공 시 0, 실패 시 SOCKET_ERROR 반환
 	// SOCKET s, const struct sockaddr* name, int namelen

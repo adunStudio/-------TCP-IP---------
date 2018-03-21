@@ -15,6 +15,18 @@ int main()
 	
 	SOCKADDR_IN server_addr, client_addr;
 
+	
+	/***
+	struct SOCKADDR_IN
+	{
+		ADDRESS_FAMILY sin_family; // 주소 체계(Address Family)
+		USHORT sin_port;           // 16비트 TCP/UDP PORT 번호
+		IN_ADDR sin_addr;          // 32비트 IP주소
+		CHAR sin_zero[8];          // 사용되지 않음, 단순히 구조체 SOCKADDR와 일치시키기 위해 삽입된 멤버
+	};
+	***/
+	
+
 	int client_addr_size;
 
 	char message[] = "Hello World!";
@@ -37,9 +49,15 @@ int main()
 		ErrorHandling("socket() error");
 
 	memset(&server_addr, 0, sizeof(server_addr));
-	server_addr.sin_family = AF_INET;
+	server_addr.sin_family = AF_INET;                        // AF_INET  : IPv4 인터넷 프로토콜에 적용하는 주소체계
+	                                                         // AF_INET6 : IPv6 인터넷 프로토콜에 적용하는 주소체계
+															 // AF_LOCAL : 로컬 통신을 위한 유닉스 프로토콜의 주소체계
+
 	server_addr.sin_addr.s_addr = htonl(INADDR_ANY);
 	server_addr.sin_port = htons(atoi(input_port));
+	// 바이트 순서를 빅 에디안으로 바꿔주는 함수, h는 호스트(host) n은 네트워크(newtwork)
+	// htonl : l은  long 4바이트를 의미하므로 IP주소의 변환에 사용
+	// htons : s는 short 2바이트를 의미하므로 PORT번호의 변환에 사용
 
 	// 2단계. IP주소와 PORT번호 할당
 	// 성공시 0, 실패 시 SOCKET_ERROR 반환
