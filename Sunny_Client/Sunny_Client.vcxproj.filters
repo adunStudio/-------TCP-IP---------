@@ -15,19 +15,22 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="hello_client.cpp">
+    <ClCompile Include="chapter01_hello_client.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="tcp_client.cpp">
+    <ClCompile Include="chapter02_tcp_client.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="echo_client.cpp">
+    <ClCompile Include="chapter05_op_client.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="echo_client2.cpp">
+    <ClCompile Include="chapter05_echo_client2.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="op_client.cpp">
+    <ClCompile Include="chapter04_echo_client.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="chapter13_oob_client.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
