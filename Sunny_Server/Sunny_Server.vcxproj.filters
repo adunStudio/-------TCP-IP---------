@@ -48,6 +48,9 @@
     <ClCompile Include="chapter22_cmplRoutinesRecv.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="chapter23_cmplRoutine_echo_server.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="protocol.h">
