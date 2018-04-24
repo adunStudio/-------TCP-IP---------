@@ -60,7 +60,7 @@ int main()
 	if (WSAStartup(MAKEWORD(2, 2), &wsaData) != 0)
 		ErrorHandling("WSAStartup() error!");
 
-	hLisnSock = WSASocket(PF_INET, SOCK_STREAM, 0, NULL, 0, WSA_FLAG_OVERLAPPED);
+	hLisnSock = WSASocket(PF_INET, SOCK_STREAM, IPPROTO_TCP, NULL, 0, WSA_FLAG_OVERLAPPED);
 	ioctlsocket(hLisnSock, FIONBIO, &mode); // 소켓을 넌-블로킹 모드로 변경한다.
 
 	memset(&lisnAdr, 0, sizeof(lisnAdr));

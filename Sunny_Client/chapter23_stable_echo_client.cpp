@@ -30,7 +30,7 @@ int main()
 	servAdr.sin_addr.s_addr = inet_addr(input_ip);
 	servAdr.sin_port        = htons(atoi(input_port));
 
-	if (connect(hSocket, (SOCKADDR*)&servAdr, sizeof(servAdr)) == SOCKET_ERROR)
+	if (WSAConnect(hSocket, (SOCKADDR*)&servAdr, sizeof(servAdr), 0 , 0, 0, 0) == SOCKET_ERROR)
 		ErrorHandlling("connect() error!");
 	else
 		puts("Connected.......");
